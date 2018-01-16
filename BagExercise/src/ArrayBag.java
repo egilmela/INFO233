@@ -95,14 +95,14 @@ public class ArrayBag<T> implements BagInterface<T> {
 
     @Override
     public boolean contains(T anEntry) {
-       for(T element : arr)
-       {
-           if (anEntry.equals(element))
-           {
-               return true;
-           }
-       }
-       return false;
+        for(T element : arr)
+        {
+            if (anEntry.equals(element))
+            {
+                return true;
+            }
+        }
+        return false;
     }
 
     @Override
