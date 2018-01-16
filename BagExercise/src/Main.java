@@ -26,5 +26,5 @@ public class Main {
         System.out.println(myBag);
         System.out.println("Full: "+myBag.isFull());
         System.out.println("Empty: "+myBag.isEmpty());
-        }
+    }
 }
