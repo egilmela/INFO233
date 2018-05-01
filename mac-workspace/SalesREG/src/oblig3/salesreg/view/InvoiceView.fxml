@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane onKeyReleased="#handleEscape" prefHeight="417.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="oblig3.salesreg.view.InvoiceViewController">
+   <children>
+      <TableView fx:id="invoiceTable" layoutY="150.0" prefHeight="171.0" prefWidth="740.0" AnchorPane.bottomAnchor="117.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0">
+        <columns>
+          <TableColumn fx:id="productIDColumn" prefWidth="64.0" text="Prod no." />
+            <TableColumn fx:id="nameColumn" prefWidth="221.0" text="Name" />
+          <TableColumn fx:id="descriptionColumn" prefWidth="178.0" text="Description" />
+            <TableColumn fx:id="categoryColumn" prefWidth="67.0" text="Category" />
+            <TableColumn fx:id="itemPriceColumn" prefWidth="69.0" text="Item price" />
+            <TableColumn fx:id="taxColumn" prefWidth="38.0" text="VAT" />
+            <TableColumn fx:id="discountColumn" minWidth="0.0" prefWidth="64.0" text="Discount" />
+            <TableColumn fx:id="netColumn" prefWidth="38.0" text="Net" />
+        </columns>
+      </TableView>
+      <GridPane layoutX="5.0" layoutY="308.0" prefHeight="33.0" prefWidth="740.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="308.0">
+        <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label text="Net sale" />
+            <Label text="Taxable" GridPane.columnIndex="1" />
+            <Label text="VAT" GridPane.columnIndex="2" />
+            <Label text="Discount" GridPane.columnIndex="3" />
+            <Label text="Sum total" GridPane.columnIndex="4">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font></Label>
+            <Label fx:id="netLabel" text="Label" GridPane.rowIndex="1" />
+            <Label fx:id="taxableLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Label fx:id="VATLabel" text="Label" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+            <Label fx:id="discountLabel" text="Label" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+            <Label fx:id="sumTotalLabel" text="    " GridPane.columnIndex="4" GridPane.rowIndex="1">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font></Label>
+         </children>
+      </GridPane>
+      <GridPane layoutX="14.0" layoutY="10.0" prefHeight="68.0" prefWidth="212.0" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="5.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints maxHeight="33.0" minHeight="10.0" prefHeight="33.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="23.0" minHeight="10.0" prefHeight="17.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="24.0" minHeight="10.0" prefHeight="19.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label fx:id="customerNameLabel" text="       ">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font></Label>
+            <Label fx:id="streetNameLabel" text="    " GridPane.rowIndex="1" />
+            <Label fx:id="postalCodeLabel" text="    " GridPane.rowIndex="2" />
+         </children>
+      </GridPane>
+      <DatePicker fx:id="issueDate" layoutX="578.0" layoutY="6.0" showWeekNumbers="true" AnchorPane.rightAnchor="8.0" AnchorPane.topAnchor="6.0" />
+      <Label layoutX="521.0" layoutY="10.0" text="Issue date" AnchorPane.topAnchor="10.0" />
+      <TextField fx:id="commentsField" layoutX="6.0" layoutY="381.0" prefHeight="27.0" prefWidth="512.0" promptText="Comments" AnchorPane.bottomAnchor="9.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="232.0" AnchorPane.topAnchor="381.0" />
+      <ButtonBar layoutX="576.0" layoutY="370.0" prefHeight="40.0" prefWidth="167.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="575.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="372.0">
+        <buttons>
+            <Button mnemonicParsing="false" onAction="#handleSave" text="Save" />
+            <Button mnemonicParsing="false" onAction="#handleCancel" text="Cancel" />
+        </buttons>
+      </ButtonBar>
+      <DatePicker fx:id="dueDate" layoutX="578.0" layoutY="33.0" showWeekNumbers="true" />
+      <Label layoutX="526.0" layoutY="37.0" text="Due date" />
+      <Button layoutX="273.0" layoutY="90.0" mnemonicParsing="false" onAction="#handleAdd" text="Add" />
+      <Label layoutX="5.0" layoutY="72.0" text="Private" textFill="#3bb21a" AnchorPane.topAnchor="72.0" />
+      <Label layoutX="119.0" layoutY="95.0" text="or" />
+      <TextField fx:id="invoiceIDField" layoutX="646.0" layoutY="64.0" prefHeight="27.0" prefWidth="106.0" />
+      <Label layoutX="578.0" layoutY="69.0" text="Invoice no." />
+      <TextField fx:id="KIDField" layoutX="646.0" layoutY="90.0" prefHeight="27.0" prefWidth="106.0" />
+      <Label layoutX="619.0" layoutY="95.0" text="KID" />
+      <ComboBox fx:id="addProductIDComboBox" editable="true" layoutX="5.0" layoutY="90.0" onKeyReleased="#handleProductIDComboBox" prefHeight="27.0" prefWidth="106.0" promptText="PROD NO" />
+      <ComboBox fx:id="addProductNameComboBox" editable="true" layoutX="142.0" layoutY="90.0" onInputMethodTextChanged="#handleProductNameComboBox" prefHeight="27.0" prefWidth="123.0" promptText="PROD NAME" />
+   </children>
+</AnchorPane>

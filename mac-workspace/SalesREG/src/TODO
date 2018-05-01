@@ -1,0 +1,56 @@
+ADAO:
+
+
+Address:
+
+
+CDAO:
+
+
+Customer:
+
+
+IDAO:
+    1. Lage spørringer
+
+
+Invoice:
+
+
+PDAO:
+    1. Lage strukturen
+
+
+Product:
+
+
+CustomerEditDialog:
+
+
+CustomerEditDialogController:
+
+
+CustomerView:
+    1. Forskjell på bedrift/person -> org.nr/fødselsnr
+    2.
+
+
+CustomerViewController:
+
+
+InvoiceView:
+
+
+InvoiceViewController:
+
+
+RootView:
+
+
+StatsView:
+
+
+StatsViewController:
+
+
+Main:
