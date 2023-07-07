@@ -1,1 +1,4 @@
-/arubanetworks/
+0.0.0.0 devices-v2.arubanetworks.com
+0.0.0.0 devices.arubanetworks.com
+0.0.0.0 www.arubanetworks.com
+0.0.0.0 arubanetworks.com
